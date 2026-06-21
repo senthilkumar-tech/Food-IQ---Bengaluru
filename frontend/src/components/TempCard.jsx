@@ -1,6 +1,6 @@
 function KpiCard({ icon, label, value, trend }) {
   return (
-    <div className="kpi-card">
+    <div className="kpi-Card">
       <div className="kpi-left-icon-box">
         <span className="kpi-emoji-icon">{icon}</span>
       </div>
