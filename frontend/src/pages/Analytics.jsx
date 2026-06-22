@@ -27,11 +27,11 @@ function Analytics() {
   const [cuisines, setCuisines] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/areas")
+    axios.get("https://food-iq-bengaluru-1.onrender.com/api/areas")
       .then((res) => setAreas(res.data))
       .catch((err) => console.log(err));
 
-    axios.get("http://localhost:5000/api/cuisines")
+    axios.get("https://food-iq-bengaluru-1.onrender.com/api/cuisines")
       .then((res) => setCuisines(res.data))
       .catch((err) => console.log(err));
   }, []);

@@ -7,7 +7,7 @@ function Restaurants() {
 
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/restaurants")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/restaurants")
     .then((res) => {
       console.log("API DATA:", res.data);
       setRestaurants(res.data);

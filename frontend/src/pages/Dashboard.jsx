@@ -22,19 +22,19 @@ const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 const [showPopup, setShowPopup] = useState(false);
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/topreviews")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/topreviews")
     .then((res) => setTopReviews(res.data))
     .catch((err) => console.log(err));
 }, []);
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/cuisines")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/cuisines")
     .then((res) => setCuisines(res.data))
     .catch((err) => console.log(err));
 }, []);
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/maprestaurants")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/maprestaurants")
     .then((res) => {
       setMapRestaurants(res.data);
     })
@@ -42,7 +42,7 @@ useEffect(() => {
 }, []);
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/areas")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/areas")
     .then((res) => {
       setAreas(res.data);
     })
@@ -50,7 +50,7 @@ useEffect(() => {
 }, []);
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/toprated")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/toprated")
     .then((res) => {
       setTopRestaurants(res.data);
     })
@@ -59,7 +59,7 @@ useEffect(() => {
 
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/kpis")
+    .get("https://food-iq-bengaluru-1.onrender.com/api/kpis")
     .then((res) => {
       setKpis(res.data);
     })
@@ -74,7 +74,7 @@ useEffect(() => {
   }
 
   axios
-    .get(`http://localhost:5000/api/search/${search}`)
+    .get(`https://food-iq-bengaluru-1.onrender.com/api/search/${search}`)
     .then((res) => {
       setResults(res.data);
     })

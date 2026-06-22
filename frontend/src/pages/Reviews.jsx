@@ -6,7 +6,7 @@ function Reviews() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/topreviews")
+      .get("https://food-iq-bengaluru-1.onrender.com/api/topreviews")
       .then((res) => setReviews(res.data))
       .catch((err) => console.log(err));
   }, []);
