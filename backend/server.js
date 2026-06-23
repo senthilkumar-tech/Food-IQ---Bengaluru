@@ -21,3 +21,11 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.get("/debug-db", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT * FROM kpi_summary");
+    res.json(rows);
+  } catch (err) {
+    res.json(err);
+  }
+});
