@@ -19,13 +19,14 @@ router.get("/restaurants", async (req, res) => {
 // KPI Summary
 router.get("/kpis", async (req, res) => {
   try {
-    const [rows] = await db.query(
-      "SELECT * FROM kpi_summary"
-    );
+    const [db] = await db.query("SELECT DATABASE() AS db");
+    const [tables] = await db.query("SHOW FULL TABLES");
 
-    res.json(rows[0]);
+    res.json({
+      database: db,
+      tables: tables
+    });
   } catch (error) {
-    console.error(error);
     res.status(500).json(error);
   }
 });
