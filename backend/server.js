@@ -30,7 +30,6 @@ app.get("/debug-db", async (req, res) => {
     res.json(err);
   }
 });
-const db = require("./db");
 
 app.get("/dbcheck", async (req, res) => {
   try {
