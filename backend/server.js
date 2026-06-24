@@ -30,3 +30,18 @@ app.get("/debug-db", async (req, res) => {
     res.json(err);
   }
 });
+const db = require("./db");
+
+app.get("/dbcheck", async (req, res) => {
+  try {
+    const [dbName] = await db.query("SELECT DATABASE() AS db");
+    const [tables] = await db.query("SHOW FULL TABLES");
+
+    res.json({
+      database: dbName,
+      tables: tables,
+    });
+  } catch (err) {
+    res.json(err);
+  }
+});
